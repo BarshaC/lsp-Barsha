@@ -28,7 +28,7 @@ public class Combinations{
 			System.out.println("[]");	//For the case when empty list is passed
 		}
 		printAllComb(input,n,sum);
-		System.out.println("****************************************");
+		System.out.println("*****************************************");
 	}
 		
 	static void display(ArrayList<Integer> v) {
