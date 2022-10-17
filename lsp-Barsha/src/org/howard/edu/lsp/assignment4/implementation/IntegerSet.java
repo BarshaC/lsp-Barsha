@@ -54,7 +54,7 @@ private List<Integer> set = new ArrayList<Integer>();
 	
 	public int smallest() throws IntegerSetException {
 		if (this.isEmpty()) {
-			throw new IntegerSetException("Can't find smallest element. The set is Empty");
+			throw new IntegerSetException("Can't find smallest element. The set is Empty!!");
 		}
 		int min = this.set.get(0);
 		for (int i = 1;i < this.length();i++) {
@@ -75,7 +75,7 @@ private List<Integer> set = new ArrayList<Integer>();
 	
 	public void remove(int item) throws IntegerSetException {
 		if (this.isEmpty()) {
-			throw new IntegerSetException("Can't remove anything. The set is Empty!");
+			throw new IntegerSetException("Can't remove anything. The set is Empty!!!");
 		}
 		if (this.contains(item)) {
 			this.set.remove(item);
@@ -107,7 +107,7 @@ private List<Integer> set = new ArrayList<Integer>();
 	public String toString() {
 		String output = "";
 		for (int item: this.getSet()) {
-			output += String.format("%d ", item);
+			output += String.format("%d", item);
 		}
 		return output;
 	}
