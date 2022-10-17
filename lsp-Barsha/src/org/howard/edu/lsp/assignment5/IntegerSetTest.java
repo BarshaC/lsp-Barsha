@@ -241,8 +241,9 @@ class IntegerSetTest {
 		set6.add(2);
 		set6.add(4);
 		set6.remove(0);
-		
-		
+		assertEquals("[2, 4]", set6.toString());
+		assertNotEquals("[1, 2, 4]", set6.toString());
+		assertNotEquals("124", set6.toString());		
 	}
 	@Test
 	@DisplayName("Test case for equals (boolean)")
