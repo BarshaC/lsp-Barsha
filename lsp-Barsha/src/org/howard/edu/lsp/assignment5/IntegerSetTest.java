@@ -61,7 +61,7 @@ class IntegerSetTest {
 		assertFalse(13 == s2.largest());
 		s2.remove(1);
 		assertFalse(13 == s2.largest());
-		assert(14 == s2.largest());			
+		assertTrue(14 == s2.largest());			
 	}
 	
 	@Test
