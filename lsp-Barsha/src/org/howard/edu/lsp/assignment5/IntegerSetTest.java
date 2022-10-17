@@ -122,21 +122,35 @@ class IntegerSetTest {
 		s1.add(2);
 		s1.add(3);
 		assertEquals("[1, 2, 3]", s1.toString());
-		assertNotEquals("[1, 1, 2, 3]", s1.toString());
-
-		
+		assertNotEquals("1", s1.toString());
+		assertNotEquals(1, s1.toString());
+		assertNotEquals("1234", s1.toString());
 	}
 
 	@Test
 	@DisplayName("Testing for Remove")
-	void testRemove() {
+	void testRemove() throws IntegerSetException{
 		IntegerSet set1 = new IntegerSet();
 		set1.add(1);
 		set1.add(2);
 		set1.add(3);
+		set1.add(4);
+		set1.remove(3);
 		assertEquals("[1, 2, 3]", set1.toString());
-		assertNotEquals("[100, 100, 100", set1.toString());
-		
+		assertNotEquals("[100, 100, 100]", set1.toString());
+	}
+	@Test
+	@DisplayName("Testing Remove Exception")
+	void testRemoveThrowsException() {
+		String expectedError;
+		String messageToPrint;
+		IntegerSet s1 = new IntegerSet();
+		Exception exception = assertThrows(IntegerSetException.class, ()->{s1.remove(1);});
+		expectedError = "Can't remove anything. The set is Empty!";
+		String checkError = "The set is not Empty.";
+		messageToPrint = exception.getMessage();
+		assertEquals(expectedError, messageToPrint);
+		assertNotEquals(checkError, messageToPrint);
 	}
 
 	@Test
@@ -221,9 +235,12 @@ class IntegerSetTest {
 
 	@Test
 	@DisplayName("Test case for ToStrings")
-	void testToString() {
+	void testToString() throws IntegerSetException {
 		IntegerSet set6 = new IntegerSet();
-		
+		set6.add(1);
+		set6.add(2);
+		set6.add(4);
+		set6.remove(0);
 		
 		
 	}
